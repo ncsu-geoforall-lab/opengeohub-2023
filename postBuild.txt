@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# exit on error
+set -e
+
+# use code dir for code
+cd $HOME
+
+# get the source code
+git clone --depth 1 --branch 8.2.1 https://github.com/OSGeo/grass.git
+
+# compile
+cd grass
+./configure \
+    --enable-largefile=yes \
+    --with-nls \
+    --with-cxx \
+    --with-readline \
+    --with-bzlib \
+    --with-pthread \
+    --with-proj-share=/usr/share/proj \
+    --with-geos=/usr/bin/geos-config \
+    --with-cairo \
+    --with-opengl-libs=/usr/include/GL \
+    --with-freetype=yes --with-freetype-includes="/usr/include/freetype2/" \
+    --with-sqlite=yes
+make
+
+# put command on path
+# ensure the user specific bin dir exists (already on path)
+mkdir -p $HOME/.local/bin/
+# create link to build
+ln -s $HOME/grass/bin.*/grass* $HOME/.local/bin/grass
+
+$HOME/.local/bin/grass --tmp-location XY --exec g.extension r.futures
+$HOME/.local/bin/grass --tmp-location XY --exec g.extension r.sample.category
+
+cd ..
+
+# download a sample dataset
+# mkdir -p data/grassdata \
+#   && curl -SL http://fatra.cnr.ncsu.edu/futures/futures_triangle_nc_notebook.zip > futures_triangle_nc.zip \
+#   && unzip -qq futures_triangle_nc.zip \
+#   && mv futures_triangle_nc data/grassdata \
+#   && rm futures_triangle_nc.zip
