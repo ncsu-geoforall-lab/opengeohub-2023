@@ -39,12 +39,13 @@ $HOME/.local/bin/grass --tmp-location XY --exec g.extension r.mapcalc.tiled
 cd ..
 
 # download a sample dataset
-mkdir -p data/grassdata \
-   && wget https://zenodo.org/record/6577922/files/FUTURES_SE_USA.zip \
-   && unzip -qq FUTURES_SE_USA.zip \
-   && mv FUTURES_SE_USA data/grassdata \
-   && rm FUTURES_SE_USA.zip
+#mkdir -p data/grassdata \
+#   && wget https://zenodo.org/record/6577922/files/FUTURES_SE_USA.zip \
+#   && unzip -qq FUTURES_SE_USA.zip \
+#   && mv FUTURES_SE_USA data/grassdata \
+#   && rm FUTURES_SE_USA.zip
 
+mkdir -p data/grassdata
 wget https://zenodo.org/record/6577903/files/population_SE_counties_2001-2100_SSP2.zip \
    && mv population_SE_counties_2001-2100_SSP2.zip data/ \
    && unzip -qq data/population_SE_counties_2001-2100_SSP2.zip \
