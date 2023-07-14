@@ -48,5 +48,5 @@ cd ..
 mkdir -p data/grassdata
 wget https://zenodo.org/record/6577903/files/population_SE_counties_2001-2100_SSP2.zip \
    && mv population_SE_counties_2001-2100_SSP2.zip data/ \
-   && unzip -qq data/population_SE_counties_2001-2100_SSP2.zip \
+   && unzip -qq data/population_SE_counties_2001-2100_SSP2.zip -d data \
    && rm data/population_SE_counties_2001-2100_SSP2.zip
