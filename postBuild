@@ -24,7 +24,7 @@ cd grass
     --with-freetype=yes --with-freetype-includes="/usr/include/freetype2/" \
     --with-sqlite=yes \
     --with-pdal=no
-make
+make -j8
 
 # put command on path
 # ensure the user specific bin dir exists (already on path)
