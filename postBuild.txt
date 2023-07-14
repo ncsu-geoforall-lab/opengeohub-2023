@@ -7,7 +7,7 @@ set -e
 cd $HOME
 
 # get the source code
-git clone --depth 1 --branch 8.2.1 https://github.com/OSGeo/grass.git
+git clone --depth 1 --branch 8.3.0 https://github.com/OSGeo/grass.git
 
 # compile
 cd grass
@@ -17,13 +17,13 @@ cd grass
     --with-cxx \
     --with-readline \
     --with-bzlib \
-    --with-pthread \
     --with-proj-share=/usr/share/proj \
     --with-geos=/usr/bin/geos-config \
     --with-cairo \
     --with-opengl-libs=/usr/include/GL \
     --with-freetype=yes --with-freetype-includes="/usr/include/freetype2/" \
-    --with-sqlite=yes
+    --with-sqlite=yes \
+    --with-pdal=no
 make
 
 # put command on path
@@ -34,6 +34,7 @@ ln -s $HOME/grass/bin.*/grass* $HOME/.local/bin/grass
 
 $HOME/.local/bin/grass --tmp-location XY --exec g.extension r.futures
 $HOME/.local/bin/grass --tmp-location XY --exec g.extension r.sample.category
+$HOME/.local/bin/grass --tmp-location XY --exec g.extension r.mapcalc.tiled
 
 cd ..
 
