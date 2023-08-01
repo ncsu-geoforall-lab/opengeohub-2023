@@ -4,6 +4,7 @@ bison
 flex
 g++
 gettext
+htop
 libblas-dev
 libbz2-dev
 libcairo2-dev
@@ -28,6 +29,7 @@ libxmu-dev
 libzstd-dev
 make
 netcdf-bin
+parallel
 proj-bin
 python
 python-dev
