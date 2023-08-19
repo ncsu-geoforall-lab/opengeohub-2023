@@ -8,9 +8,9 @@ In the hands-on part, participants will speed up an urban growth model by parall
 Participants will be able to either run the workshop on their laptops (see instructions) or in a cloud environment (using WholeTale, no installation required).
 
 ## Agenda
-Session 1: [Lecture](https://docs.google.com/presentation/d/1rNaDijIBTiLMaD3s33QQPJOP6ntXkUfdvhwuW81f2hM/) + Intro to parallelization with GRASS GIS ([intro_to_GRASS_parallelization.ipynb](intro_to_GRASS_parallelization.ipynb))
+Session 1: [Lecture](https://docs.google.com/presentation/d/1rNaDijIBTiLMaD3s33QQPJOP6ntXkUfdvhwuW81f2hM/) + Intro to parallelization with GRASS GIS ([01_intro_to_GRASS_parallelization.ipynb](01_intro_to_GRASS_parallelization.ipynb))
 
-Session 2: Parallelization Case Study: Urban Growth Modeling ([FUTURES_case_study.ipynb](FUTURES_case_study.ipynb))
+Session 2: Parallelization Case Study: Urban Growth Modeling ([02_FUTURES_case_study.ipynb](02_FUTURES_case_study.ipynb))
 
 ## How to run this workshop
 
@@ -69,7 +69,7 @@ grass --tmp-location XY --exec g.extension r.mapcalc.tiled
 git clone https://github.com/ncsu-geoforall-lab/opengeohub-2023.git
 cd opengeohub-2023
 # open the intro notebook
-jupyter notebook intro_to_GRASS_parallelization.ipynb
+jupyter notebook 01_intro_to_GRASS_parallelization.ipynb
 ```
 
 ### Running in a cloud environment
